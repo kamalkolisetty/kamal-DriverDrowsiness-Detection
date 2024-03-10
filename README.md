@@ -46,7 +46,6 @@ The dataset used is a subset of a dataset from [Kaggle](https://www.kaggle.com/d
 ## Seed Used
 - A seed value (42) was used for reproducibility and ensuring consistent randomization.
 
-## Default Webcam
-- The default webcam connected to the computer was used for real-time video feed input.
+ ## User Interaction for Termination
+ - Users can terminate the application by pressing the "q" key or the ESC button, exiting the while loop and releasing the webcam feed.
 
-.

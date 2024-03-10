@@ -1,37 +1,52 @@
-# Driver_drowsiness_system_CNN
 
-This system is designed to detect driver drowsiness using Convolutional Neural Networks (CNN) in Python with the help of OpenCV. Its primary objective is to reduce the occurrence of accidents on the road by detecting if the driver is becoming drowsy and issuing an alarm as a warning.
 
-The implementation involves utilizing Python, OpenCV, and Keras (with TensorFlow) to construct a system capable of extracting facial features from the driver's face. By detecting the status of the driver's eyes (open or closed), the system can identify if the driver is falling asleep. If the eyes remain closed for a continuous period of 3 seconds, an alarm is triggered to capture the driver's attention and prevent any potential accidents.
+# Driver Drowsiness Detection System
 
-To achieve this, a CNN model is trained on a dataset that contains examples of both closed and open eyes. This trained model is then utilized by OpenCV to capture live video feed from the camera. Each frame from the video feed is passed through the CNN model for processing and classification, determining whether the eyes are open or closed in real-time.
+## Introduction
+This project implements a driver drowsiness detection system using computer vision techniques and deep learning. The system analyzes facial features, particularly the eyes, in real-time through a webcam feed to detect signs of drowsiness in drivers. When drowsiness is detected, the system alerts the driver to prevent potential accidents.
 
-More info in: https://youtu.be/X8ZFH_fZsIo?si=v64a-kkypdOt_J2y 
-## Setup
-
-To set the model up:<br />
-Pre-install all the required libraries <br />1) OpenCV<br /> 2) Keras<br /> 3) Numpy<br /> 4) Pandas<br /> 5) OS<br />
-Download the Dataset from the link given below and edit the address in the notebook accordingly.<br />
-Run the Jupyter Notebook and add the model name in detect_drowsiness.py file in line 20.<br />
+## Training the Model
+### Dataset Preparation
+- The model was trained using a dataset containing images of drivers with various eye states, including open and closed eyes.
+- Data augmentation techniques such as image rotation, flipping, and zooming were employed to increase dataset diversity.
 
 ## The Dataset
 
-The dataset which was used is a subnet of a dataset from(https://www.kaggle.com/datasets/dheerajperumandla/drowsiness-dataset)<br />
-it has 4 folder which are <br />1) Closed_eyes - having 726 pictures<br /> 2) Open_eyes - having 726 pictures<br /> 3) Yawn - having 725 pictures<br /> 4) no_yawn - having 723 pictures<br />
+The dataset used is a subset of a dataset from [Kaggle](https://www.kaggle.com/datasets/dheerajperumandla/drowsiness-dataset). It includes the following folders:
+1. `Closed_eyes` - containing 726 pictures
+2. `Open_eyes` - containing 726 pictures
+3. `Yawn` - containing 725 pictures
+4. `no_yawn` - containing 723 pictures
+.
+### Model Training
+- The dataset was split into training and validation sets.
+- Hyperparameters such as learning rate, batch size, and number of epochs were fine-tuned for optimal performance.
+- The model's performance was evaluated using metrics such as accuracy, precision, recall, and F1-score.
 
-<!-- ## The Convolution Neural Network
+## Building the Model
+### Model Architecture
+- The model architecture utilized convolutional neural network (CNN) layers followed by fully connected layers.
+- ReLU activation function was used in the convolutional layers, while Softmax activation was used in the output layer for multi-class classification.
 
-![CNN](https://user-images.githubusercontent.com/16632408/159187014-4bc4b70e-98d6-4313-873f-997ded2eff27.png)
+### Regularization
+- Dropout regularization was employed to prevent overfitting.
 
-## Accuracy
+### Loss Function
+- Categorical Crossentropy loss function was used for multi-class classification.
 
-We did 50 epochs, to get a good accuracy from the model i.e. 98% for training accuracy and 96% for validation accuracy.
-![Graph](https://user-images.githubusercontent.com/16632408/159187004-92a72662-ddfe-471d-8bd6-65a3593a70a1.png)
+## Libraries Used
+- **OpenCV**: Used for image processing and webcam access.
+- **TensorFlow/Keras**: Utilized for building, training, and evaluating the deep learning model.
+- **NumPy**: Employed for numerical computations and data manipulation.
+- **Playsound**: Utilized for playing audio alerts when drowsiness is detected.
 
-## The Output
+## Model API
+- TensorFlow/Keras API was used for building and training the model.
 
-1. Open Eyes<br />
-   ![Open_eyes](https://user-images.githubusercontent.com/16632408/159187179-b557ab8e-fb8c-4408-850b-417893014f8c.png)
-2. Close Eyes<br />
-   Here we detect wheater the eyes are closed and count the number of frames for which the eyes were closed (which is 10 frame) greater then that the Alarm will ring and the WARNING sign is displayed.
-   ![Closed_eyes](https://user-images.githubusercontent.com/16632408/159187305-68cbdee3-8325-4216-85e3-7dbb66a429fb.png) -->
+## Seed Used
+- A seed value (42) was used for reproducibility and ensuring consistent randomization.
+
+## Default Webcam
+- The default webcam connected to the computer was used for real-time video feed input.
+
+.

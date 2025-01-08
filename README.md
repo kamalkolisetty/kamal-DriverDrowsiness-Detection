@@ -74,13 +74,9 @@ The custom dataset contains images of **open eyes** and **closed eyes**. Preproc
 
 2. Navigate to the project directory:  
    ```bash  
-   cd drowsiness-detection  
+   cd detect_drowsiness
    ```  
-
-3. Install dependencies:  
-   ```bash  
-   pip install -r requirements.txt  
-   ```  
+ 
 
 ---
 
@@ -88,7 +84,7 @@ The custom dataset contains images of **open eyes** and **closed eyes**. Preproc
 
 1. **Run the script**:  
    ```bash  
-   python drowsiness_detection.py  
+   python detect_drowsiness.py  
    ```  
 
 2. **Webcam feed**: The system captures frames, processes them, and displays the live feed with FPS, eye status, and drowsiness alerts.  
